@@ -12,6 +12,12 @@ SECRET_KEY = 'your-secret-key-here'  # Replace with a secure key for production
 DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000',  # Example: For a React frontend
+    'http://127.0.0.1:5500',  # Example: For VS Code Live Server
+    'http://localhost:8080',  # Example: For a Vue frontend
+]
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
