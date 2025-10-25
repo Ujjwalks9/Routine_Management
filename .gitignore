@@ -1,0 +1,40 @@
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Django migrations (optional: keep if you want)
+*/migrations/*.pyc
+*/migrations/__pycache__/
+*/migrations/*.py[cod]
+
+# Database files
+db.sqlite3
+
+# Django secret key / local settings
+*.env
+*.local
+
+# Logs
+*.log
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Static / media files (optional: if you don’t want to track them)
+staticfiles/
+media/
+
+# Coverage / testing
+.coverage
+htmlcov/
+.tox/
