@@ -1,0 +1,6 @@
+asgiref==3.10.0
+deap==1.4.3
+Django==5.2.7
+mysqlclient==2.2.7
+numpy==2.3.4
+sqlparse==0.5.3
