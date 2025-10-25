@@ -10,3 +10,10 @@ class AllocationTests(TestCase):
     def test_teacher_preference(self):
         pref = TeacherPreference.objects.create(teacher=self.teacher, subject=self.subject, priority=1)
         self.assertEqual(pref.priority, 1)
+
+    def test_allocation_optimization(self):
+        TeacherPreference.objects.create(teacher=self.teacher, subject=self.subject, priority=1)
+        from allocation.algorithms.allocation_optimizer import allocate_teachers
+        best_ind = allocate_teachers()
+        allocation = Allocation.objects.filter(subject=self.subject).first()
+        self.assertEqual(allocation.teacher, self.teacher)  # Should respect preference

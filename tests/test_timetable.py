@@ -10,3 +10,10 @@ class TimetableTests(TestCase):
     def test_clash_detection(self):
         clashes = check_clashes(self.teacher.id, 1, self.timeslot.id)
         self.assertEqual(clashes, 0)  # No clashes initially
+
+    def test_clash_with_existing_allocation(self):
+        Allocation.objects.create(
+            teacher=self.teacher, subject_id=1, class_id=1, room_id=1, timeslot=self.timeslot
+        )
+        clashes = check_clashes(self.teacher.id, 2, self.timeslot.id)
+        self.assertGreater(clashes, 0)  # Should detect teacher clash
