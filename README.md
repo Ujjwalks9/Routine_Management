@@ -1,4 +1,4 @@
-```markdown
+
 # Routine Management System
 
 A Django-based web application for generating class timetables using a genetic algorithm, ensuring no clashes and respecting teacher preferences.
