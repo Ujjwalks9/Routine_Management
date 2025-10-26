@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 from .algorithms.allocation_optimizer import allocate_teachers
 from .models import TeacherPreference
 from timetable.models import Teacher, Subject
 
+@csrf_exempt
 def allocate_teacher_view(request):
     if request.method == 'POST':
         teacher_id = request.POST.get('teacher')

@@ -1,4 +1,5 @@
-from timetable.models import Teacher, Subject, Allocation
+from timetable.models import Teacher, Subject
+from allocation.models import Allocation
 from allocation.models import TeacherPreference
 from deap import base, creator, tools, algorithms
 import random

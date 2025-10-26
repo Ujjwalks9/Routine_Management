@@ -42,13 +42,3 @@ class TimeSlot(models.Model):
 
     def __str__(self):
         return f"{self.day} {self.start_time}-{self.end_time}"
-
-class Allocation(models.Model):
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
-    class_id = models.ForeignKey(Class, on_delete=models.CASCADE)
-    room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    timeslot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"{self.teacher} - {self.subject} - {self.timeslot}"

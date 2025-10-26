@@ -1,4 +1,4 @@
-CREATE DATABASE routine_management;
+-- CREATE DATABASE routine_management;
 USE routine_management;
 
 CREATE TABLE timetable_teacher (
