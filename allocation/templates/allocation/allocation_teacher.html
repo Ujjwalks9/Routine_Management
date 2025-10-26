@@ -2,7 +2,7 @@
 {% block content %}
 <h1>Allocate Teacher</h1>
 <form method="post">
-    {% csrf_token %}
+    <!-- {% csrf_token %} -->
     <label for="teacher-select">Teacher:</label>
     <select id="teacher-select" name="teacher" required>
         {% for teacher in teachers %}

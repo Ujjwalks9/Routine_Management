@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'timetable',
     'allocation',
     'rest_framework',
@@ -34,11 +35,21 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Add this list. Use the exact URL of your frontend.
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  # Example for React
+    'http://localhost:5500',  # Example for VS Code Live Server
+]
+
+# Add this line to allow cookies to be sent
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'routine_management.urls'
 
